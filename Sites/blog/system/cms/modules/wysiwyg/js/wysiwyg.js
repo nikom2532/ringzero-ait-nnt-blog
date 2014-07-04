@@ -65,7 +65,6 @@ function insertAudio(id, title, location, path)
 
 // By default, insert (which will also replace)
 var replace_html = null;
-
 $(function()
 {
 	function detectFile()
@@ -119,9 +118,7 @@ $(function()
      *  - manipulates dom classes etc
      */
     $('#files-nav li a').live('click', function(e) {
-        
         e.preventDefault();
-        
         var href_val = $(this).attr('href');
         
         //remove existing 'current' classes
@@ -137,6 +134,10 @@ $(function()
 		{
 			$('#files_right_pane').load(href_val + ' #files-wrapper', function() {
 				$(this).children().fadeIn('slow');
+				$('.tabs').tabs();
+				$('.dataTable').dataTable({
+		        	"sPaginationType": "full_numbers"
+		    	});
 			});
 		}
 		else

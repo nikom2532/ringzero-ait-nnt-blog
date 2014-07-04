@@ -76,9 +76,12 @@ class Image extends WYSIWYG_Controller {
 		$this->template
 			->title('Images')
 			->append_js('admin/jquery.droptabs.js')
+			->append_js('admin/datatables/jquery.dataTables-1.7.6.min.js')
 			->append_css('admin/basic_layout.css')
 			->append_css('workless/workless.css')
 			->append_css('workless/application.css')
+			->append_css('admin/datatables/jquery.dataTables.css')
+			->append_css('admin/datatables/jquery.dataTables_themeroller.css')
 			->build('image/index', $data);
 	}
 

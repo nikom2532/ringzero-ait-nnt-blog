@@ -58,8 +58,10 @@ define('ENVIRONMENT', (isset($_SERVER['PYRO_ENV']) ? $_SERVER['PYRO_ENV'] : PYRO
 		break;
 
 		case PYRO_STAGING:
-		case PYRO_PRODUCTION:
 			ini_set('display_errors', true);
+		break;
+		case PYRO_PRODUCTION:
+			ini_set('display_errors', false);
 		break;
 
 		default:

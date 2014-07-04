@@ -62,7 +62,14 @@
 						<?php echo form_textarea(array('id' => 'body', 'name' => 'body', 'value' => $post->body, 'rows' => 30, 'class' => $post->type)) ?>
 					</div>
 				</li>
-
+				<?php if ( ! module_enabled('keywords')): ?>
+					<?php echo form_hidden('keywords'); ?>
+				<?php else: ?>
+					<li>
+						<label for="keywords"><?php echo lang('global:keywords') ?></label>
+						<div class="input"><?php echo form_input('keywords', $post->keywords, 'id="keywords"') ?></div>
+					</li>
+				<?php endif; ?>
 			</ul>
 		<?php echo form_hidden('preview_hash', $post->preview_hash)?>
 		</fieldset>
@@ -89,14 +96,7 @@
 	
 				
 	
-				<?php if ( ! module_enabled('keywords')): ?>
-					<?php echo form_hidden('keywords'); ?>
-				<?php else: ?>
-					<li>
-						<label for="keywords"><?php echo lang('global:keywords') ?></label>
-						<div class="input"><?php echo form_input('keywords', $post->keywords, 'id="keywords"') ?></div>
-					</li>
-				<?php endif; ?>
+				
 	
 				<li class="date-meta">
 					<label><?php echo lang('blog:date_label') ?></label>

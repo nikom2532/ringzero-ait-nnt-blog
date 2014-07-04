@@ -204,3 +204,5 @@ $config['supported_languages'] = array(
 |
 */
 $config['default_language'] = 'en';
+
+$config['check_http_accept_language'] = TRUE;

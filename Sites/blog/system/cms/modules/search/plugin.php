@@ -13,12 +13,14 @@ class Plugin_Search extends Plugin
 
 	public $name = array(
 		'en' => 'Search',
-            'fa' => 'جستجو',
+        'fa' => 'جستجو',
+		'th' => 'ค้นหา',
 	);
 
 	public $description = array(
 		'en' => 'Create a search form and display search results.',
-            'fa' => 'ایجاد فرم جستجو و نمایش نتایج',
+        'fa' => 'ایجاد فرم جستجو و نمایش نتایج',
+		'th' => 'สร้างคำค้นหา จากการแสดงผลของการค้นหา',
 	);
 
 	/**
@@ -115,20 +117,19 @@ class Plugin_Search extends Plugin
 	 */
 	public function results($slug = '')
 	{
-		$this->load->model('search_index_m');
+		//$this->load->model('search_index_m');
 
 		$limit   = $this->attribute('limit', 10);
-		$uri     = $this->attribute('uri', 'search/results');
+		$uri     = $this->attribute('uri', 'results');
 		$segment = $this->attribute('page_segment', count(explode('/', $uri)) + 1);
 
 		// If it's POST, send it off to return as a GET
-		if ($this->input->post('q'))
-		{
-			redirect($uri.'?q='.$this->input->post('q'));
-		}
-
-		$query  = $this->input->get('q');
-		$filter = $this->input->get('filter');
+		// if ($this->input->post('q'))
+		// {
+		// 	redirect($uri.'?q='.$_POST['q']);
+		// }
+		$query  = $this->input->post('q');
+		$filter = $this->input->post('filter');
 
 		$total = $this->search_index_m
 			->filter($filter)

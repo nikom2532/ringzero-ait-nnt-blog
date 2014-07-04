@@ -88,13 +88,11 @@ class MY_Controller extends MX_Controller
 				$site_lang = Settings::get('site_lang');
 			}
 		}
-		
-		// We can't have a blank language. If there happens
- 		// to be a blank language, let's default to English.
- 		if ( ! $site_lang) {
- 			$site_lang = 'en';
+		/*
+		if ( ! $site_lang) {
+ 			$site_lang = 'english';
  		}
-		///////////////////////////////////////////////////////////////////////
+		*/
 		// What language us being used
 		defined('CURRENT_LANGUAGE') or define('CURRENT_LANGUAGE', $site_lang);
 

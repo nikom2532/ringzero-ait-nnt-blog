@@ -11,7 +11,7 @@ class Files_wysiwyg extends WYSIWYG_Controller {
 	public function __construct()
 	{
 		parent::__construct();	
-		//$this->load->model('prd_homeprd_model');
+		$this->load->model('prd_homeprd_model');
 	}
 
 	public function index($id = 0)

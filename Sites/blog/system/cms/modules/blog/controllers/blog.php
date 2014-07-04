@@ -348,6 +348,13 @@ class Blog extends Public_Controller
 		// Full URL for convenience.
 		$post['url'] = site_url('blog/'.date('Y/m', $post['created_on']).'/'.$post['slug']);
 	
+	
+		// $post['url'] = site_url('blog/'.$post['slug']);
+		
+		// Then change:
+		// modules/blog/config/routes.php	from $route['(blog)/(:num)/(:num)/(:any)']   = 'blog/view/$4';   to
+		//  $route['(blog)/(:any)']   = 'blog/view/$2';
+		
 		// What is the preview? If there is a field called intro,
 		// we will use that, otherwise we will cut down the blog post itself.
 		$post['preview'] = (isset($post['intro'])) ? $post['intro'] : $post['body'];

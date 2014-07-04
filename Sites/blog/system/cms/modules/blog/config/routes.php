@@ -22,9 +22,21 @@
 
 // public
 $route['(blog)/(:num)/(:num)/(:any)']   = 'blog/view/$4';
+// $route['(blog)/(:any)']   = 'blog/view/$2';	
+// from modules/blog/controllers/blog.php
 $route['(blog)/page(/:num)?']           = 'blog/index$2';
 $route['(blog)/rss/all.rss']            = 'rss/index';
 $route['(blog)/rss/(:any).rss']         = 'rss/category/$2';
+/*
+$route['(blog)/(:any)']                 = 'blog/view/$2';
+$route['(blog)/page(/:num)?']           = 'blog/index$2';
+$route['(blog/rss/all.rss']             = 'rss/index';
+$route['(blog)/rss/(:any).rss']         = 'rss/category/$2';
+
+$route['blog/admin/categories(/:any)?'] = 'admin_categories$1';
+$route['blog/admin/fields(/:any)?']     = 'admin_fields$1';
+$route['blog/admin(/:any)']             = 'admin$1';
+*/
 
 // admin
 $route['blog/admin/categories(/:any)?'] = 'admin_categories$1';

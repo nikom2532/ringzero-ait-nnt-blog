@@ -60,7 +60,7 @@ class Admin extends Admin_Controller
 			);
 		}
 
-		header('Content-Type: application/json');
+		header('Content-Type: application/json; charset=UTF-8;');
 		exit(json_encode(array('results' => $output)));
     }
 }
